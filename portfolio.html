@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #ffb6c1;
+      --secondary: #ffe4e1;
+      --text: #333;
+      --bg: #fffafc;
+      --accent: #ff69b4;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      background: var(--secondary);
+      padding: 20px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 12px rgba(255, 182, 193, 0.3);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      animation: fadeDown 1s ease forwards;
+    }
+
+    nav h1 {
+      color: var(--accent);
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: var(--accent);
+      transition: width 0.4s ease-in-out;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    nav ul li a:hover {
+      color: var(--accent);
+    }
+
+    header {
+      height: 100vh;
+      background: linear-gradient(135deg, #ffe4e1, #fff);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    header h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: var(--accent);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #555;
+      max-width: 600px;
+    }
+
+    section {
+      padding: 80px 40px;
+    }
+
+    section h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+      color: var(--accent);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+
+    footer {
+      background: var(--secondary);
+      padding: 40px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h1>✨ Puntu</h1>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header id="home">
+    <h2>Hello, I'm Puntu ✨</h2>
+    <p>A passionate front-end sorceress crafting sweet, smooth digital spells ✨</p>
+  </header>
+
+  <section id="about">
+    <h3>About Me</h3>
+    <p style="text-align:center; max-width:700px; margin: 0 auto;">I’m a creative web developer who loves turning ideas into magical UI/UX experiences. I mix modern design with buttery-smooth animations to craft iconic digital journeys.</p>
+  </section>
+
+  <section id="skills">
+    <h3>Skills</h3>
+    <div class="card-grid">
+      <div class="card">HTML5</div>
+      <div class="card">CSS3 + Sass</div>
+      <div class="card">JavaScript (ES6+)</div>
+      <div class="card">ReactJS</div>
+      <div class="card">Responsive Design</div>
+      <div class="card">UI/UX Design</div>
+    </div>
+  </section>
+
+  <section id="services">
+    <h3>Services</h3>
+    <div class="card-grid">
+      <div class="card">Web Design</div>
+      <div class="card">Portfolio Sites</div>
+      <div class="card">Landing Pages</div>
+      <div class="card">UI/UX Consulting</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h3>Projects</h3>
+    <div class="card-grid">
+      <div class="card">Personal Blog</div>
+      <div class="card">E-commerce UI</div>
+      <div class="card">React Portfolio</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h3>Contact Me</h3>
+    <p style="text-align:center; max-width:600px; margin: 0 auto;">Have a project or just want to vibe over pink gradients and CSS magic? Let’s talk!</p>
+  </section>
+
+  <footer>
+    ❤ Made with love & sparkles by Puntu. All rights reserved.
+  </footer>
+</body>
+</html>
