@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>Sandhya Bhattarai Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #ffb6c1;
-      --secondary: #ffe4e1;
-      --text: #333;
-      --bg: #fffafc;
-      --accent: #ff69b4;
+      --primary: #444;
+      --secondary: #2b2b2b;
+      --text: #eaeaea;
+      --bg: #1a1a1a;
+      --accent: #888;
     }
 
     * {
@@ -21,10 +21,17 @@
     }
 
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--text);
       scroll-behavior: smooth;
+      animation: bodyFadeIn 1.2s ease-in-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes bodyFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     nav {
@@ -33,7 +40,7 @@
       position: sticky;
       top: 0;
       z-index: 999;
-      box-shadow: 0 2px 12px rgba(255, 182, 193, 0.3);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -41,7 +48,7 @@
     }
 
     nav h1 {
-      color: var(--accent);
+      color: var(--text);
       font-size: 1.8rem;
       font-weight: 600;
     }
@@ -56,50 +63,42 @@
       text-decoration: none;
       color: var(--text);
       font-weight: 500;
-      transition: color 0.3s ease;
       position: relative;
-    }
-
-    nav ul li a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: -2px;
-      left: 0;
-      background-color: var(--accent);
-      transition: width 0.4s ease-in-out;
-    }
-
-    nav ul li a:hover::after {
-      width: 100%;
+      transition: color 0.3s ease, transform 0.3s ease;
     }
 
     nav ul li a:hover {
       color: var(--accent);
+      transform: scale(1.05);
     }
 
     header {
       height: 100vh;
-      background: linear-gradient(135deg, #ffe4e1, #fff);
+      background: linear-gradient(135deg, #1f1f1f, #2a2a2a);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       padding: 0 20px;
-      animation: fadeIn 1.5s ease;
+      animation: glowEnter 1.5s ease-in-out;
+    }
+
+    @keyframes glowEnter {
+      0% { opacity: 0; transform: scale(0.95); text-shadow: none; }
+      50% { opacity: 0.8; transform: scale(1.02); text-shadow: 0 0 8px var(--accent); }
+      100% { opacity: 1; transform: scale(1); text-shadow: 0 0 15px var(--accent); }
     }
 
     header h2 {
       font-size: 3rem;
       margin-bottom: 20px;
-      color: var(--accent);
+      color: var(--text);
     }
 
     header p {
       font-size: 1.2rem;
-      color: #555;
+      color: #aaa;
       max-width: 600px;
     }
 
@@ -111,7 +110,7 @@
       font-size: 2rem;
       margin-bottom: 20px;
       text-align: center;
-      color: var(--accent);
+      color: var(--text);
       animation: fadeInUp 1s ease forwards;
     }
 
@@ -123,16 +122,18 @@
     }
 
     .card {
-      background: #fff;
+      background: #2b2b2b;
       border-radius: 12px;
       padding: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 1s ease forwards;
+      color: var(--text);
     }
 
     .card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
     }
 
     footer {
@@ -140,11 +141,11 @@
       padding: 40px;
       text-align: center;
       font-size: 0.9rem;
-      color: #777;
+      color: #999;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
@@ -152,17 +153,12 @@
       from { opacity: 0; transform: translateY(-20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
   </style>
 </head>
 <body>
 
   <nav>
-    <h1>✨ Puntu</h1>
+    <h1>Sandhya Bhattarai</h1>
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About Me</a></li>
@@ -174,13 +170,13 @@
   </nav>
 
   <header id="home">
-    <h2>Hello, I'm Puntu ✨</h2>
-    <p>A passionate front-end sorceress crafting sweet, smooth digital spells ✨</p>
+    <h2>Hello, I'm Sandhya Bhattarai</h2>
+    <p>A professional front-end developer building smooth and modern digital experiences.</p>
   </header>
 
   <section id="about">
     <h3>About Me</h3>
-    <p style="text-align:center; max-width:700px; margin: 0 auto;">I’m a creative web developer who loves turning ideas into magical UI/UX experiences. I mix modern design with buttery-smooth animations to craft iconic digital journeys.</p>
+    <p style="text-align:center; max-width:700px; margin: 0 auto;">I’m a web developer focused on creating high-end, user-centric interfaces. I blend technical precision with refined design to build impactful digital experiences.</p>
   </section>
 
   <section id="skills">
@@ -216,11 +212,21 @@
 
   <section id="contact">
     <h3>Contact Me</h3>
-    <p style="text-align:center; max-width:600px; margin: 0 auto;">Have a project or just want to vibe over pink gradients and CSS magic? Let’s talk!</p>
+    <p style="text-align:center; max-width:600px; margin: 0 auto;">Have a project or looking to collaborate? Let’s build something meaningful together.</p>
   </section>
+<section id="gallery">
+  <h3>Gallery</h3>
+  <div class="photo-shuffle">
+    <img src="photo1.jpg" alt="Gallery photo 1" />
+    <img src="photo2.jpg" alt="Gallery photo 2" />
+    <img src="photo3.jpg" alt="Gallery photo 3" />
+    <img src="photo4.jpg" alt="Gallery photo 4" />
+    <img src="photo5.jpg" alt="Gallery photo 5" />
+  </div>
+</section>
 
   <footer>
-    ❤ Made with love & sparkles by Puntu. All rights reserved.
+    &copy; 2025 Sandhya Bhattarai. All rights reserved.
   </footer>
 </body>
 </html>
